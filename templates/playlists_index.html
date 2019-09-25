@@ -1,5 +1,4 @@
 <!-- templates/playlists_index.html -->
-<!-- templates/playlists_index.html -->
 {% extends 'base.html' %}
 
 {% block content %}
@@ -8,7 +7,8 @@
 <a href='/playlists/new'>New Playlist</a>
 
 {% for playlist in playlists %}
-    <h2><a href="{{ playlist.videos[0] }}">{{ playlist.title }}</a></h2>
+    <h2><a href='/playlists/{{ playlist._id }}'>{{ playlist.title }}</a></h2>
     <small>{{ playlist.description }}</small>
+    <h4><a href='{{ playlist.videos[0] }}'>Videos</a></h4>
 {% endfor %}
 {% endblock %}
