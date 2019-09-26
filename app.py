@@ -19,8 +19,7 @@ def playlists_submit():
     playlist = {
         'title': request.form.get('title'),
         'description': request.form.get('description'),
-        'videos': request.form.get('videos').split(),
-        'rating': request.form.get('rating')
+        'videos': request.form.get('videos').split()
     }
     playlist_id = playlists.insert_one(playlist).inserted_id
     return redirect(url_for('playlists_show', playlist_id=playlist_id))
@@ -60,6 +59,10 @@ def playlists_delete(playlist_id):
     """Delete one playlist."""
     playlists.delete_one({'_id': ObjectId(playlist_id)})
     return redirect(url_for('playlists_index'))
-    
+
+
 if __name__ == '__main__':
     app.run(debug=True)
+    
+
+    
