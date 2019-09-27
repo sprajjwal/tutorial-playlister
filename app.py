@@ -66,7 +66,7 @@ def playlists_delete(playlist_id):
 
 if __name__ == '__main__':
     # playlists.delete_many({})
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=os.environ.get('PORT', 5000))
     
 
     
