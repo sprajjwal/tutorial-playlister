@@ -62,6 +62,7 @@ def playlists_delete(playlist_id):
 
 
 if __name__ == '__main__':
+    # playlists.delete_many({})
     app.run(debug=True)
     
 
